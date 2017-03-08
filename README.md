@@ -54,7 +54,7 @@ Code lines, which concatenated by undescore at the end of phisical line, would b
 Credits 
 --------
 
-The mechanics of indenting VBA code is based on the original algorithm of Michael Ciurescu author [VB-Tool Add-in][2].
+The mechanics of indenting VBA code is based on the original algorithm of Michael Ciurescu author [VBTools AddIn][2].
 
 [1]: https://github.com/osevoso/VBACodeHelper/releases/
 [2]: http://www.vbforums.com/showthread.php?479449-VBTools-AddIn-Auto-indent-VB-code-!
