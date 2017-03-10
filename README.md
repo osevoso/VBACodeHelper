@@ -3,7 +3,7 @@ VBA Code Helper
 Overfiew
 --------
 
-This is simple add-in for VBA IDE in 32- and 64-bits host applications (such as Excel, Word, AutoCAD...), which provides **VBA code indent tool** via Сode Window context menu items, and for additionally, two hotkey:
+This is simple add-in for VBA IDE in 64- and 32-bit host apps (such as Excel, Word, AutoCAD etc), which provides **VBA code indent tool** via Сode Window context menu items, and for additionally, two hotkey:
 
 >Ctrl + Alt + *"Gray Plus key"*
 
@@ -18,24 +18,24 @@ for uncomment code lines.
 Download
 --------
 
-Archived binaries for 32- and 64-bites host applications are available at the [Releases][1] page.
+Archived binaries for 64- and 32-bit host apps are available at the [Releases][1] page.
 
->Note that for 64 and 32-bits host applications must use relevant DLL of bits.
+>Note that for 64- and 32-bit apps, you must use a corresponding bit DLL.
 
 Install
 --------
 
->**Look out!** Before install, be shure what hotkeys of your background services and OS shell is not same with the add-in hotkeys to avoid undesirable surprises.
+>Before install, be shure what hotkeys of your background services, OS shell and other add-ins is not same with the add-in hotkeys.
 
-1.  Unpack DLL into preffered folder (*C:\Addons\VBACH*, for example)
+1.  Unpack DLL into local drive folder (*C:\Addons\VBACH*, for example)
 
 2.  Run with administrator credits at Windows command line: 
 
-    For 64-bits host applications on 64-bits OS and for 32-bits host applications on 32-bits OS
+    For 64-bit host apps on 64-bit OS and for 32-bit host apps on 32-bit OS
 
         C:\Windows\regsvr32.exe C:\Addons\VBACH\VBACodeHelper.dll
 
-    For 32-bits host applications on 64-bits OS
+    For 32-bit host apps on 64-bit OS
 
         C:\Windows\SysWOW64\regsvr32.exe C:\Addons\VBACH\VBACodeHelper.dll
 
@@ -49,7 +49,8 @@ Use the same command with "/**u**" command line key, for example:
 Restrictions
 --------
 
-Code lines, which concatenated by undescore at the end of phisical line, would be concat into single phisical code line. If its undesirable for you, use "Selected Lines" indent mode for skip their where necessary.
+Code lines, which concatenated by undescore at the end of phisical line, would be concat into single phisical code line. 
+If its undesirable for you, use "Selected Lines" indent mode for skip their where necessary.
 
 Credits 
 --------
