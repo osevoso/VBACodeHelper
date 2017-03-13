@@ -2,7 +2,7 @@ VBA Code Helper
 ===============
 
 [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square)](http://opensource.org/licenses/MIT)
-[![The Latest Release](https://img.shields.io/badge/release-v1.0.1-blue.svg?style=flat-square)](https://github.com/osevoso/VBACodeHelper/releases/tag/v1.0.1)
+[![The Latest Release](https://img.shields.io/badge/release-v1.0-blue.svg?style=flat-square)](https://github.com/osevoso/VBACodeHelper/releases/tag/v1.0)
 
 Overfiew
 --------
@@ -49,6 +49,12 @@ Deinstall
 Use the same command with "/**u**" command line key, for example: 
 
     regsvr32.exe /u C:\Addons\VBACH\VBACodeHelper.dll
+    
+-Restrictions
+---------
+
+Code lines, which concatenated by undescore at the end of phisical line, would be concat into single phisical code line. 
+If its undesirable for you, use "Selected Lines" indent mode for skip their where necessary.    
 
 Credits 
 --------
