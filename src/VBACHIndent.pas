@@ -33,7 +33,7 @@ var
     '^Property\s{1,}.*', '^Private\s{1,}Enum\s{1,}.*', '^Public\s{1,}Enum\s{1,}.*', '^Friend\s{1,}Enum\s{1,}.*',
     '^Enum\s{1,}.*', '^Private\s{1,}Type\s{1,}.*', '^Public\s{1,}Type\s{1,}.*', '^Friend\s{1,}Type\s{1,}.*', '^Type\s{1,}.*');
 
-  arrBlockEnd: array [0..27] of string = ('^End\s{1,}If', '^#End\s{1,}If', '^Next.*', '^Loop',
+  arrBlockEnd: array [0..27] of string = ('^End\s{1,}If', '^#End\s{1,}If', '^Next(\s{1,}.*)*', '^Loop',
     '^Loop\s{1,}.*', '^End\s{1,}Select', '^Wend', '^End\s{1,}With', '^End\s{1,}Function', '^End\s{1,}Function',
     '^End\s{1,}Function', '^End\s{1,}Function', '^End\s{1,}Sub', '^End\s{1,}Sub', '^End\s{1,}Sub',
     '^End\s{1,}Sub', '^End\s{1,}Property', '^End\s{1,}Property', '^End\s{1,}Property', '^End\s{1,}Property',
@@ -266,7 +266,7 @@ var AllCode: String;
     StartCursorPos, StartColumn, EndLine, EndColumn, CountLines: Integer;
 begin
   ACodeModule.CodePane.GetSelection(StartCursorPos, StartColumn, EndLine, EndColumn);
-  CountLines := EndLine - StartCursorPos;
+  CountLines := EndLine - StartCursorPos + 1;
   if CountLines >= 1 then
   begin
     AllCode := ACodeModule.Lines[StartCursorPos, CountLines];

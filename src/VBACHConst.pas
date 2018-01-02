@@ -26,7 +26,7 @@ resourcestring
 
 resourcestring
   rsErr_CanNotRegisterAddin     = 'Can''t register Add-In %s';
-  rsErr_CanNotDetermineSubProg  = 'Can''t determine suprogram';
+  rsErr_CanNotDetermineSubProg  = 'Can''t determine subprogram';
 
 implementation
 
