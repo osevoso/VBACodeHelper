@@ -175,31 +175,6 @@ begin
   until not FoundStartEnd and (StartPos = 0) and (EndPos = High(AVBLines));
 end;
 
-procedure IndentMultilines(var ALines: array of string);
-var i, IndentDepth : Integer;
-
-    function GetIndentDepth(ALine: string): Integer;
-    begin
-      Result := 0;
-      while ALine.Chars[Result] = TABIndent do
-        Inc(Result);
-    end;
-
-begin
-  IndentDepth := 0;
-  for i := 0 to High(ALines) do
-  begin
-    if (Copy(ALines[i], Length(ALines[i]) - 1, 2) = ' _') then
-    begin
-      if IndentDepth = 0 then
-        IndentDepth := GetIndentDepth(ALines[i]) + 1;
-      ALines[i + 1] := StringOfChar(TABIndent, IndentDepth) + Trim(ALines[i + 1]);
-    end
-    else
-      IndentDepth := 0;
-  end;
-end;
-
 procedure IndentCode(ACodeModule: CodeModule; AStartInsPos: Integer;
   ACountOrigLines: Integer; ATopLine: Integer; AAllCode: string);
 var i: Integer;
@@ -208,6 +183,7 @@ var i: Integer;
 begin
   IndentInitialize;
   try
+    AAllCode := StringReplace(AAllCode, ' _' + sLineBreak, ' ', [rfReplaceAll]);
     AllLines := AAllCode.Split([sLineBreak]);
     for i := 0 to High(AllLines) do
       AllLines[i] := Trim(AllLines[i]);
@@ -222,7 +198,6 @@ begin
           AllLines[i] := Copy(AllLines[i], 2);
       end;
     end;
-    IndentMultilines(AllLines);
     AAllCode := StrArrayJoin(AllLines).Replace(BlockingIndent, '', [rfReplaceAll]);
     ACodeModule.DeleteLines(AStartInsPos, ACountOrigLines);
     ACodeModule.InsertLines(AStartInsPos, AAllCode);
