@@ -2,18 +2,18 @@ VBA Code Helper
 ===============
 
 [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square)](http://opensource.org/licenses/MIT)
-[![The Latest Release](https://img.shields.io/badge/release-v1.0-blue.svg?style=flat-square)](https://github.com/osevoso/VBACodeHelper/releases/tag/v1.0)
+[![The Latest Release](https://img.shields.io/badge/release-v1.0.1-blue.svg?style=flat-square)](https://github.com/osevoso/VBACodeHelper/releases/tag/v1.0.1)
 
 Overfiew
 --------
 
 This is simple add-in for VBA IDE in 64- and 32-bit host apps (such as Excel, Word, AutoCAD etc), which provides **VBA code indent tool** via Сode Window context menu items, and for additionally, two hotkey:
 
->Ctrl + Alt + *"Gray Plus" key*
+>Ctrl + Alt + Num <kbd>+</kbd>
 
 for comment code lines,
 
->Ctrl + Alt + *"Gray Minus" key*
+>Ctrl + Alt + Num <kbd>-</kbd>
 
 for uncomment code lines.
 
@@ -50,7 +50,7 @@ Use the same command with "/**u**" command line key, for example:
 
     regsvr32.exe /u C:\Addons\VBACH\VBACodeHelper.dll
     
--Restrictions
+Restrictions
 ---------
 
 Code lines, which concatenated by undescore at the end of phisical line, would be concat into single phisical code line. 
