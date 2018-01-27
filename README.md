@@ -29,7 +29,7 @@ Archived binaries for 64- and 32-bit host apps are available at the [Releases][1
 Install
 --------
 
->Before install, be shure what hotkeys of your background services, OS shell and other add-ins is not same with the add-in hotkeys.
+>Before install, be shure that hotkeys of your background services, OS shell and other add-ins is not same with the add-in hotkeys.
 
 1.  Unpack DLL into local drive folder (*C:\Addons\VBACH*, for example)
 
