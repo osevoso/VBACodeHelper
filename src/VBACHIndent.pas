@@ -25,20 +25,17 @@ const
   BlockingIndent: Char = #1;
 
 var
-  arrBlockStart: array [0..27] of string = ('^If\s{1,}.*\s{1,}Then((\s*)$|(\s*)''(.*)$|$)', '^#If\s{1,}.*\s{1,}Then.*',
-    '^For\s{1,}.*', '^Do\s{1,}.*', '^Do', '^Select\s{1,}Case\s{1,}.*', '^While\s{1,}.*', '^With\s{1,}.*',
+  arrBlockStart: array [0..26] of string = ('^If\s{1,}.*\s{1,}Then((\s*)$|(\s*)''(.*)$|$)', '^#If\s{1,}.*\s{1,}Then.*',
+    '^For\s{1,}.*', '^Do((\s{1,}.*)|$)', '^Select\s{1,}Case\s{1,}.*', '^While\s{1,}.*', '^With\s{1,}.*',
     '^Private\s{1,}Function\s{1,}.*', '^Public\s{1,}Function\s{1,}.*', '^Friend\s{1,}Function\s{1,}.*',
     '^Function\s{1,}.*', '^Private\s{1,}Sub\s{1,}.*', '^Public\s{1,}Sub\s{1,}.*', '^Friend\s{1,}Sub\s{1,}.*',
     '^Sub\s{1,}.*', '^Private\s{1,}Property\s{1,}.*', '^Public\s{1,}Property\s{1,}.*', '^Friend\s{1,}Property\s{1,}.*',
     '^Property\s{1,}.*', '^Private\s{1,}Enum\s{1,}.*', '^Public\s{1,}Enum\s{1,}.*', '^Friend\s{1,}Enum\s{1,}.*',
     '^Enum\s{1,}.*', '^Private\s{1,}Type\s{1,}.*', '^Public\s{1,}Type\s{1,}.*', '^Friend\s{1,}Type\s{1,}.*', '^Type\s{1,}.*');
 
-  arrBlockEnd: array [0..27] of string = ('^End\s{1,}If', '^#End\s{1,}If', '^Next(\s{1,}.*)*', '^Loop',
-    '^Loop\s{1,}.*', '^End\s{1,}Select', '^Wend', '^End\s{1,}With', '^End\s{1,}Function', '^End\s{1,}Function',
-    '^End\s{1,}Function', '^End\s{1,}Function', '^End\s{1,}Sub', '^End\s{1,}Sub', '^End\s{1,}Sub',
-    '^End\s{1,}Sub', '^End\s{1,}Property', '^End\s{1,}Property', '^End\s{1,}Property', '^End\s{1,}Property',
-    '^End\s{1,}Enum', '^End\s{1,}Enum', '^End\s{1,}Enum', '^End\s{1,}Enum', '^End\s{1,}Type', '^End\s{1,}Type',
-    '^End\s{1,}Type', '^End\s{1,}Type');
+  arrBlockEnd: array [0..11] of string = ('^End\s{1,}If', '^#End\s{1,}If', '^Next(\s{1,}.*)*', '^Loop((\s{1,}.*)|$)',
+    '^End\s{1,}Select', '^Wend(\s{1,}|$)', '^End\s{1,}With', '^End\s{1,}Function', '^End\s{1,}Sub',
+    '^End\s{1,}Property', '^End\s{1,}Enum', '^End\s{1,}Type');
 
   arrBlockMiddle: array [0..4] of string = ('^ElseIf\s{1,}.*\s{1,}Then', '^#ElseIf\s{1,}.*\s{1,}Then', '^Else', '^#Else', '^Case\s{1,}.*');
 
