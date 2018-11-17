@@ -8,6 +8,13 @@ const
   sCHBT_IndentModule     = 'CHBT_IndentModule';
   sCHBT_IndentSubProgram = 'CHBT_IndentSubProgram';
   sCHBT_IndentLines      = 'CHBT_IndentLines';
+  { VBE bar's items }
+  sVBE_EditBar           = 'Edit';
+  sVBE_CommentLines      = 'Comment Block';
+  sVBE_UnCommentLines    = 'UnComment Block';
+  sVBE_ToggleBookmark    = 'Toggle Bookmark';
+  sVBE_NextBookmark      = 'Next Bookmark';
+  sVBE_PreviousBookmark  = 'Previous Bookmark';
 
 resourcestring
 {$IFDEF WIN32}

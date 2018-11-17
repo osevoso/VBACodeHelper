@@ -22,6 +22,9 @@ type
     FHotKeyWindowHandle: HWND;
     FHotKeyCommentLine: Cardinal;
     FHotKeyUnCommentLine: Cardinal;
+    FHotKeyToggleBookmark: Cardinal;
+    FHotKeyNextBookmark: Cardinal;
+    FHotKeyPrevBookmark: Cardinal;
     procedure InitButtons;
     procedure DestroyButtons;
     procedure WndProc(var Msg: TMessage);
@@ -111,6 +114,15 @@ begin
       { UnComment lines }
       FHotKeyUnCommentLine := GlobalAddAtom(StrFmt(AtomText, 'UnCommentHotVBE%.8X%.8X', [HInstance, GetCurrentThreadID]));
       RegisterHotKey(FHotKeyWindowHandle, FHotKeyUnCommentLine, MOD_ALT + MOD_CONTROL, VK_SUBTRACT);
+      { Toggle bookmark }
+      FHotKeyToggleBookmark := GlobalAddAtom(StrFmt(AtomText, 'TgBmarkHotVBE%.8X%.8X', [HInstance, GetCurrentThreadID]));
+      RegisterHotKey(FHotKeyWindowHandle, FHotKeyToggleBookmark, MOD_ALT + MOD_CONTROL, VK_MULTIPLY);
+      { Next bookmark }
+      FHotKeyNextBookmark := GlobalAddAtom(StrFmt(AtomText, 'NxBkmarkVBE%.8X%.8X', [HInstance, GetCurrentThreadID]));
+      RegisterHotKey(FHotKeyWindowHandle, FHotKeyNextBookmark, MOD_CONTROL, VK_OEM_3);
+      { Previous bookmark }
+      FHotKeyPrevBookmark := GlobalAddAtom(StrFmt(AtomText, 'PvBkmarkVBE%.8X%.8X', [HInstance, GetCurrentThreadID]));
+      RegisterHotKey(FHotKeyWindowHandle, FHotKeyPrevBookmark, MOD_SHIFT + MOD_CONTROL, VK_OEM_3);
     end;
 end;
 
@@ -244,6 +256,12 @@ begin
     GlobalDeleteAtom(FHotKeyCommentLine);
     UnRegisterHotKey(FHotKeyWindowHandle, FHotKeyUnCommentLine);
     GlobalDeleteAtom(FHotKeyUnCommentLine);
+    UnRegisterHotKey(FHotKeyWindowHandle, FHotKeyToggleBookmark);
+    GlobalDeleteAtom(FHotKeyToggleBookmark);
+    UnRegisterHotKey(FHotKeyWindowHandle, FHotKeyNextBookmark);
+    GlobalDeleteAtom(FHotKeyNextBookmark);
+    UnRegisterHotKey(FHotKeyWindowHandle, FHotKeyPrevBookmark);
+    GlobalDeleteAtom(FHotKeyPrevBookmark);
     DeallocateHWnd(FHotKeyWindowHandle);
     FHotKeyWindowHandle := 0;
   end;
@@ -282,16 +300,35 @@ begin
   if Msg.Msg = WM_HOTKEY then
   begin
     fgWnd := GetForegroundWindow;
-    if (fgWnd = FVBEWindowHandle) and ((Msg.WParam = FHotKeyCommentLine) or
-       (Msg.WParam = FHotKeyUnCommentLine)) then
+    if (fgWnd = FVBEWindowHandle) and
+       ((Msg.WParam = FHotKeyCommentLine) or
+        (Msg.WParam = FHotKeyUnCommentLine) or
+        (Msg.WParam = FHotKeyToggleBookmark) or
+        (Msg.WParam = FHotKeyNextBookmark) or
+        (Msg.WParam = FHotKeyPrevBookmark)) then
     begin
       if Assigned(FVBEApp) then
       begin
         cmBars := (FVBEApp as VBE).CommandBars;
         if Msg.WParam = FHotKeyCommentLine then
-          cmBars.Item['Edit'].Controls.Item['Comment Block'].Execute
+          cmBars.Item[sVBE_EditBar].Controls.Item[sVBE_CommentLines].Execute
         else if Msg.WParam = FHotKeyUnCommentLine then
-          cmBars.Item['Edit'].Controls.Item['UnComment Block'].Execute;
+          cmBars.Item[sVBE_EditBar].Controls.Item[sVBE_UnCommentLines].Execute
+        else if Msg.WParam = FHotKeyToggleBookmark then
+        begin
+          if cmBars.Item[sVBE_EditBar].Controls.Item[sVBE_ToggleBookmark].Enabled then
+            cmBars.Item[sVBE_EditBar].Controls.Item[sVBE_ToggleBookmark].Execute;
+        end
+        else if Msg.WParam = FHotKeyNextBookmark then
+        begin
+          if cmBars.Item[sVBE_EditBar].Controls.Item[sVBE_NextBookmark].Enabled then
+            cmBars.Item[sVBE_EditBar].Controls.Item[sVBE_NextBookmark].Execute
+        end
+        else if Msg.WParam = FHotKeyPrevBookmark then
+        begin
+          if cmBars.Item[sVBE_EditBar].Controls.Item[sVBE_PreviousBookmark].Enabled then
+            cmBars.Item[sVBE_EditBar].Controls.Item[sVBE_PreviousBookmark].Execute;
+        end;
       end;
     end;
   end
