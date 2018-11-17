@@ -2,27 +2,29 @@ VBA Code Helper
 ===============
 
 [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square)](http://opensource.org/licenses/MIT)
-[![The Latest Release](https://img.shields.io/badge/release-v1.0.1-blue.svg?style=flat-square)](https://github.com/osevoso/VBACodeHelper/releases/tag/v1.0.1)
+[![The Latest Release](https://img.shields.io/badge/release-v1.0.2-blue.svg?style=flat-square)](https://github.com/osevoso/VBACodeHelper/releases/tag/v1.0.2)
 
 Overfiew
 --------
 
-This is simple add-in for VBA IDE in 64- and 32-bit host apps (such as Excel, Word, AutoCAD etc), which provides **VBA code indent tool** via Сode Window context menu items, and for additionally, two hotkey:
+This is simple add-in for VBA IDE in 64- and 32-bit host apps (such as Excel, Word, AutoCAD etc), which provides **VBA code indent tool** via Сode Window popup menu and, for additionally - some hotkeys for frequently used operations:
 
->Ctrl + Alt + Num <kbd>+</kbd>
+Сomment code lines: <kbd>CTRL</kbd> <kbd>ALT</kbd> <kbd>NUM +</kbd>
 
-for comment code lines,
+UnComment code lines: <kbd>CTRL</kbd> <kbd>ALT</kbd> <kbd>NUM -</kbd>
 
->Ctrl + Alt + Num <kbd>-</kbd>
+Toggle bookmark: <kbd>CTRL</kbd> <kbd>ALT</kbd> <kbd>NUM *</kbd>
 
-for uncomment code lines.
+Go to next bookmark: <kbd>CTRL</kbd> <kbd>`~</kbd>
+
+Go to previous bookmark: <kbd>CTRL</kbd> <kbd>SHIFT</kbd> <kbd>`~</kbd>.
 
 ---
 
 Download
 --------
 
-Archived binaries for 64- and 32-bit host apps are available at the [Releases][1] page.
+Packed binaries for 64- and 32-bit host apps are available at the [Releases][1] page.
 
 >Note that for 64- and 32-bit apps, you must use a corresponding bit DLL.
 
@@ -43,6 +45,13 @@ Install
 
         C:\Windows\SysWOW64\regsvr32.exe C:\Addons\VBACH\VBACodeHelper.dll
 
+3.  Turn on "Loaded" checkbox in VBE add-in's dialog.
+
+Update
+--------
+
+Just replace the addin's dll where it is located.
+
 Deinstall
 --------
 
@@ -54,7 +63,7 @@ Restrictions
 ---------
 
 Code lines, which concatenated by undescore at the end of phisical line, would be concat into single phisical code line. 
-If its undesirable for you, use "Selected Lines" indent mode for skip their where necessary.    
+If its undesirable for you, use "Selected Lines" indentation mode where it is necessary.    
 
 Credits 
 --------
