@@ -181,6 +181,8 @@ var i: Integer;
     VBLine: String;
     AllLines: TArray<string>;
 begin
+  if AAllCode.Trim = EmptyStr then
+    Exit;
   IndentInitialize;
   try
     AAllCode := StringReplace(AAllCode, ' _' + sLineBreak, ' ', [rfReplaceAll]);
