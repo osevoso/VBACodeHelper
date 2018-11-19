@@ -39,7 +39,7 @@ Install
 
     For 64-bit host apps on 64-bit OS and for 32-bit host apps on 32-bit OS
 
-        C:\Windows\regsvr32.exe C:\Addons\VBACH\VBACodeHelper.dll
+        C:\Windows\System32\regsvr32.exe C:\Addons\VBACH\VBACodeHelper.dll
 
     For 32-bit host apps on 64-bit OS
 
