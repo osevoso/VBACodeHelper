@@ -4,7 +4,7 @@ VBA Code Helper
 [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 [![The Latest Release](https://img.shields.io/badge/release-v1.0.2-blue.svg?style=flat-square)](https://github.com/osevoso/VBACodeHelper/releases/tag/v1.0.2)
 
-Overfiew
+Overview
 --------
 
 This is simple add-in for VBA IDE in 64- and 32-bit host apps (such as Excel, Word, AutoCAD etc), which provides **VBA code indent tool** via Сode Window popup menu and, for additionally - some hotkeys for frequently used operations:
