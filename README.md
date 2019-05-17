@@ -62,7 +62,7 @@ Use the same command with "/**u**" command line key, for example:
 Restrictions
 ---------
 
-Code lines, which concatenated by undescore at the end of phisical line, would be concat into single phisical code line. 
+Code lines, which concatenated by underscore at the end of phisical line, would be concat into single phisical code line. 
 If its undesirable for you, use "Selected Lines" indentation mode where it is necessary.    
 
 Credits 
