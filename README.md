@@ -3,7 +3,7 @@ VBA Code Helper
 
 [![The MIT License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 [![The Latest Release](https://img.shields.io/badge/release-v1.0.2-blue.svg?style=flat-square)](https://github.com/osevoso/VBACodeHelper/releases/tag/v1.0.2)
-[![Github Releases](https://img.shields.io/github/downloads/osevoso/vbacodehelper/v1.0.2/total.svg?&style=flat-square&color=indianred)]()
+[![Github Releases](https://img.shields.io/github/downloads/osevoso/vbacodehelper/v1.0.2/total.svg?&style=flat-square&color=limegreen)]()
 
 Overview
 --------
